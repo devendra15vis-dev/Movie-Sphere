@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Sphere</title>
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        ::selection{
+            background:#2563eb;
+            color:white;
+        }
+    </style>
+</head>
+
+<body class="app-body min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="site-nav sticky top-0 z-50">
+        <div class="nav-inner max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <h1 class="site-brand text-2xl md:text-3xl font-bold tracking-wider">
+                <span class="text-blue-500">M</span>ovie
+                <span class="text-blue-500">H</span>ub
+            </h1>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-links hidden md:flex gap-8 font-medium">
+                <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
+                <li><a href="movie.html" class="hover:text-blue-400 transition">Movies</a></li>
+                <li><a href="about.html" class="hover:text-blue-400 transition">About</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="menu-button md:hidden" aria-label="Open navigation menu" aria-expanded="false">
+                <svg class="w-8 h-8"
+                     fill="none"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu hidden md:hidden">
+
+            <ul class="flex flex-col text-center">
+
+                <li>
+                    <a href="index.html"
+                       class="block py-4 hover:bg-blue-600 transition">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="movie.html"
+                       class="block py-4 hover:bg-blue-600 transition">
+                        Movies
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html"
+                       class="block py-4 hover:bg-blue-600 transition">
+                        About
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="home-hero max-w-6xl mx-auto px-6 py-24 text-center">
+
+        <p class="eyebrow">A better kind of movie night</p>
+
+        <h2 class="text-4xl md:text-6xl font-bold mb-6">
+            Find the story<br>that stays with you.
+        </h2>
+
+        <p class="text-slate-300 max-w-2xl mx-auto mb-10">
+            A little curiosity goes a long way. Search the archive and find your next favorite.
+        </p>
+
+        <!-- Search Form -->
+          <form id="movieForm" class="search-form flex flex-col sm:flex-row justify-center gap-4">
+
+            <input
+                id="movieInput"
+                type="text"
+                placeholder="Try a title, an actor, a feeling..."
+                class="search-input w-full sm:w-[500px] px-5 py-4"
+                autocomplete="off">
+
+            <button
+                type="submit"
+                class="search-button px-8 py-4 font-semibold transition">
+                Search <span aria-hidden="true">↗</span>
+            </button>
+
+        </form>
+
+        <!-- Stats -->
+        <div class="hero-stats flex flex-wrap justify-center gap-10 mt-14">
+
+            <div>
+                <h3 class="text-3xl font-bold text-blue-500">10K+</h3>
+                <p class="text-slate-400">Movies</p>
+            </div>
+
+            <div>
+                <h3 class="text-3xl font-bold text-blue-500">500+</h3>
+                <p class="text-slate-400">Reviews</p>
+            </div>
+
+            <div>
+                <h3 class="text-3xl font-bold text-blue-500">50+</h3>
+                <p class="text-slate-400">Genres</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Features Section -->
+    <section class="quick-picks max-w-7xl mx-auto px-6 pb-16" aria-label="Quick searches">
+        <div class="quick-picks-heading">
+            <p class="eyebrow">Not sure where to start?</p>
+            <h2>Pick a first scene.</h2>
+        </div>
+        <div class="quick-picks-list">
+            <button type="button" class="quick-pick" data-search="The Godfather">A timeless classic <span>↗</span></button>
+            <button type="button" class="quick-pick" data-search="Interstellar">Somewhere out there <span>↗</span></button>
+            <button type="button" class="quick-pick" data-search="Parasite">A sharp surprise <span>↗</span></button>
+        </div>
+    </section>
+
+    <!-- Movie Results -->
+    <main class="results-section max-w-7xl mx-auto px-6 pb-20">
+
+        <div class="results-heading">
+            <p class="eyebrow">The archive</p>
+            <h2>Search results</h2>
+        </div>
+
+        <div
+            id="movieHub"
+            class="movie-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Movie Cards JS se yaha render honge -->
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer border-t border-white/10 py-8 text-center">
+
+        <h2 class="text-2xl md:text-3xl font-bold tracking-wider">
+                <span class="text-blue-500">M</span>ovie
+                <span class="text-blue-500">H</span>ub
+            </h2>
+
+        <p class="text-slate-400 mb-4">
+            Your gateway to discovering amazing movies.
+        </p>
+
+        <p class="text-slate-500 text-sm">
+            © 2026 Movie Hub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.toggle("hidden");
+            menuBtn.setAttribute("aria-expanded", String(!isOpen));
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
